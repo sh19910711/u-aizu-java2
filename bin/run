@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$1" = "" ]; then
+  echo error
+  exit 1
+fi
+
+workdir=`pwd`
+dirname=`basename $workdir`
+java -classpath build/$dirname.jar $1
+
