@@ -1,0 +1,11 @@
+#!/bin/sh
+
+bindir=`dirname $0`
+root=`dirname $bindir`
+
+pushd $root
+
+tar zvcf - ./ex*/*.java | ssh aizu-std1 /usr/local/gnu/bin/tar zxvf - -C java2/
+
+popd
+
