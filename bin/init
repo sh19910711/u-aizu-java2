@@ -4,6 +4,9 @@ create_dir() {
   echo mkdir -p $root/$1
   mkdir -p $root/$1
 
+  echo chmod 0705 $root/$1
+  chmod 0705 $root/$1
+
   echo touch $root/$1/.gitkeep
   touch $root/$1/.gitkeep
 }
