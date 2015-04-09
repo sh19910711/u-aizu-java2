@@ -1,0 +1,14 @@
+#!/bin/sh
+
+bindir=`dirname $0`
+root=`dirname $bindir`
+
+project=$1
+if [ "$project" = "" ]; then
+  echo error
+  exit 1
+fi
+
+echo copy: CMakeLists
+erb p=$project $root/CMakeLists.txt.erb > ./$project/CMakeLists.txt
+
