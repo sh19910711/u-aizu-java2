@@ -25,7 +25,7 @@ public abstract class Vehicle {
     return -1;
   }
 
-  abstract public Integer costFor100Km(PetroleumPrice p);
+  abstract public Double costFor100Km(PetroleumPrice p);
   abstract public void setAirConON();
   abstract public void setAirConOFF();
 

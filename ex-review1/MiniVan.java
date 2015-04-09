@@ -10,8 +10,8 @@ public class MiniVan extends Vehicle {
     this.hasAutoDoor = hasAutoDoor;
   }
 
-  public Integer costFor100Km(PetroleumPrice p) {
-    return -1;
+  public Double costFor100Km(PetroleumPrice p) {
+    return -1.1;
   }
 
   public void setAirConON() {

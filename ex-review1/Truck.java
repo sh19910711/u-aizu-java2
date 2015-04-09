@@ -10,8 +10,8 @@ public class Truck extends Vehicle {
     this.power = power;
   }
 
-  public Integer costFor100Km(PetroleumPrice p) {
-    return -1;
+  public Double costFor100Km(PetroleumPrice p) {
+    return -1.1;
   }
 
   public void setAirConON() {
