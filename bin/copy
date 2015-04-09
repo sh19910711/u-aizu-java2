@@ -9,6 +9,15 @@ if [ "$project" = "" ]; then
   exit 1
 fi
 
+if [ "${project: -1}" = "/" ]; then
+  project=${project::-1}
+fi
+
+echo project-name: $project
+
 echo copy: CMakeLists
 erb p=$project $root/CMakeLists.txt.erb > ./$project/CMakeLists.txt
+
+echo copy: Hello.java
+cp $root/Hello.java ./$project/Hello.java
 
