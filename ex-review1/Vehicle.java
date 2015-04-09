@@ -17,7 +17,8 @@ public abstract class Vehicle {
   }
 
   public String toString() {
-    return "TODO";
+    return String.format("ModelName: %s, Company: %s, Owner: %s, EngineType: %s, TankSize: %.1f, FuelConsumption: %.2f",
+        modelName, company, owner, engineType, tankSize, fuelConsumption);
   }
 
   public Integer movableDistance() {

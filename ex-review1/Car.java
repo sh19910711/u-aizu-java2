@@ -20,4 +20,9 @@ public class Car extends Vehicle {
     airConditionOn = false;
   }
 
+  public String toString() {
+    return super.toString()
+      + String.format(", NumberOfSeat: %d", numberOfSeats);
+  }
+
 }

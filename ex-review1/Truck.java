@@ -22,4 +22,9 @@ public class Truck extends Vehicle {
     airConditionOn = false;
   }
 
+  public String toString() {
+    return super.toString()
+      + String.format(", NumberOfSeat: %d, HorsePower: %d", numberOfSeats, power);
+  }
+
 }

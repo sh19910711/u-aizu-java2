@@ -22,4 +22,13 @@ public class MiniVan extends Vehicle {
     airConditionOn = false;
   }
 
+  public String toString() {
+    return super.toString()
+      + String.format(", NumberOfSeat: %d, HasAutoDoor: %s", numberOfSeats, booleanToString(hasAutoDoor));
+  }
+
+  private String booleanToString(Boolean b) {
+    return b ? "true" : "false";
+  }
+
 }
