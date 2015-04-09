@@ -1,22 +1,31 @@
-abstract class Vehicle {
+public abstract class Vehicle {
 
-  public String modelName;
-  public String company;
-  public String owner;
-  public String engineType;
-  public Integer tankSize;
-  public Integer fuelConsumption;
+  protected String modelName;
+  protected String company;
+  protected String owner;
+  protected String engineType;
+  protected Double tankSize;
+  protected Double fuelConsumption;
 
-  String toString() {
+  public Vehicle(String modelName, String company, String owner, String engineType, Double tankSize, Double fuelConsumption) {
+    this.modelName = modelName;
+    this.company = company;
+    this.owner = owner;
+    this.engineType = engineType;
+    this.tankSize = tankSize;
+    this.fuelConsumption = fuelConsumption;
+  }
+
+  public String toString() {
     return "TODO";
   }
 
-  Integer movableDistance() {
+  public Integer movableDistance() {
     return -1;
   }
 
-  abstract Integer costFor100Km();
-  abstract void setAirConON();
-  abstract void setAirConOFF();
+  abstract public Integer costFor100Km(PetroleumPrice p);
+  abstract public void setAirConON();
+  abstract public void setAirConOFF();
 
 }
