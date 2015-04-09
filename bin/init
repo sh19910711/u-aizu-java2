@@ -1,0 +1,15 @@
+#!/bin/sh
+
+create_dir() {
+  echo mkdir -p $root/$1
+  mkdir -p $root/$1
+
+  echo touch $root/$1/.gitkeep
+  touch $root/$1/.gitkeep
+}
+
+bindir=`dirname $0`
+root=`dirname $bindir`
+
+create_dir ex-review1
+
