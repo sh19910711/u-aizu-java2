@@ -6,6 +6,7 @@ public class Car extends Vehicle {
   public Car(String modelName, String company, String owner, String engineType, Double tankSize, Double fuelConsumption, Integer numberOfSeats) {
     super(modelName, company, owner, engineType, tankSize, fuelConsumption);
     this.numberOfSeats = numberOfSeats;
+    this.airConditionOn = false;
   }
 
   public Double costFor100Km(PetroleumPrice p) {
@@ -23,6 +24,14 @@ public class Car extends Vehicle {
   public String toString() {
     return super.toString()
       + String.format(", NumberOfSeat: %d", numberOfSeats);
+  }
+
+  protected Double getFuelConsumption() {
+    if ( airConditionOn ) {
+      return fuelConsumption * 0.9;
+    } else {
+      return fuelConsumption;
+    }
   }
 
 }

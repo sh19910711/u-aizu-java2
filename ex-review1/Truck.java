@@ -8,6 +8,7 @@ public class Truck extends Vehicle {
     super(modelName, company, owner, engineType, tankSize, fuelConsumption);
     this.numberOfSeats = numberOfSeats;
     this.power = power;
+    this.airConditionOn = false;
   }
 
   public Double costFor100Km(PetroleumPrice p) {
@@ -25,6 +26,14 @@ public class Truck extends Vehicle {
   public String toString() {
     return super.toString()
       + String.format(", NumberOfSeat: %d, HorsePower: %d", numberOfSeats, power);
+  }
+
+  protected Double getFuelConsumption() {
+    if ( airConditionOn ) {
+      return fuelConsumption * 0.8;
+    } else {
+      return fuelConsumption;
+    }
   }
 
 }

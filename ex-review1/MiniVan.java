@@ -8,6 +8,7 @@ public class MiniVan extends Vehicle {
     super(modelName, company, owner, engineType, tankSize, fuelConsumption);
     this.numberOfSeats = numberOfSeats;
     this.hasAutoDoor = hasAutoDoor;
+    this.airConditionOn = false;
   }
 
   public Double costFor100Km(PetroleumPrice p) {
@@ -29,6 +30,14 @@ public class MiniVan extends Vehicle {
 
   private String booleanToString(Boolean b) {
     return b ? "true" : "false";
+  }
+
+  protected Double getFuelConsumption() {
+    if ( airConditionOn ) {
+      return fuelConsumption * 0.8;
+    } else {
+      return fuelConsumption;
+    }
   }
 
 }

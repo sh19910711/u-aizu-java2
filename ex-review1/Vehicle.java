@@ -19,17 +19,21 @@ public abstract class Vehicle {
   }
 
   public String toString() {
-    DecimalFormat df = new DecimalFormat("###.0########");
+    DecimalFormat df = new DecimalFormat("###.0########################################");
     return String.format("ModelName: %s, Company: %s, Owner: %s, EngineType: %s, TankSize: %s, FuelConsumption: %s",
-        modelName, company, owner, engineType, df.format(tankSize), df.format(fuelConsumption));
+        modelName, company, owner, engineType, df.format(tankSize), df.format(getFuelConsumption()));
   }
 
   public Double movableDistance() {
-    return tankSize * fuelConsumption;
+    return tankSize * getFuelConsumption();
   }
 
   abstract public Double costFor100Km(PetroleumPrice p);
   abstract public void setAirConON();
   abstract public void setAirConOFF();
+
+  protected Double getFuelConsumption() {
+    return fuelConsumption;
+  }
 
 }
