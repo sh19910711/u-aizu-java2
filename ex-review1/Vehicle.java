@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public abstract class Vehicle {
 
   protected String modelName;
@@ -17,12 +19,13 @@ public abstract class Vehicle {
   }
 
   public String toString() {
-    return String.format("ModelName: %s, Company: %s, Owner: %s, EngineType: %s, TankSize: %.1f, FuelConsumption: %.2f",
-        modelName, company, owner, engineType, tankSize, fuelConsumption);
+    DecimalFormat df = new DecimalFormat("###.0########");
+    return String.format("ModelName: %s, Company: %s, Owner: %s, EngineType: %s, TankSize: %s, FuelConsumption: %s",
+        modelName, company, owner, engineType, df.format(tankSize), df.format(fuelConsumption));
   }
 
-  public Integer movableDistance() {
-    return -1;
+  public Double movableDistance() {
+    return tankSize * fuelConsumption;
   }
 
   abstract public Double costFor100Km(PetroleumPrice p);
