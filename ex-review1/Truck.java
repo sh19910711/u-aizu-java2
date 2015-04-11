@@ -12,7 +12,11 @@ public class Truck extends Vehicle {
   }
 
   public Double costFor100Km(PetroleumPrice p) {
-    return -1.1;
+    if ( engineType == "Gasoline" || engineType == "Hybrid" ) {
+      return p.getGasolineCost() * 100.0 / getFuelConsumption();
+    } else {
+      return p.getDieselCost() * 100.0 / getFuelConsumption();
+    }
   }
 
   public void setAirConON() {

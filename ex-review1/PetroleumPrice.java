@@ -7,7 +7,7 @@ public class PetroleumPrice {
     this.dieselPrice = dieselPrice;
   }
 
-  public Double getGasolinePrice() {
+  public Double getGasolineCost() {
     return this.gasolinePrice;
   }
 

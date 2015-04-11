@@ -10,7 +10,7 @@ public class Car extends Vehicle {
   }
 
   public Double costFor100Km(PetroleumPrice p) {
-    return -1.1;
+    return p.getGasolineCost() * 100.0 / getFuelConsumption();
   }
 
   public void setAirConON() {
