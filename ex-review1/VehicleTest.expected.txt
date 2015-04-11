@@ -1,0 +1,59 @@
+ModelName: Camley, Company: Toyota, Owner: Suzuki, EngineType: Gasoline, TankSize: 70.0, FuelConsumption: 15.15, NumberOfSeat: 5
+Movable distance: 1060.5 Km
+Cost for 100 Km: 943.8943894389439 Yen
+
+ModelName: Aqua, Company: Toyota, Owner: Nakajima, EngineType: Hybrid, TankSize: 36.0, FuelConsumption: 40.0, NumberOfSeat: 5
+Movable distance: 1440.0 Km
+Cost for 100 Km: 357.5 Yen
+
+ModelName: Sienna, Company: Toyota, Owner: Tanaka, EngineType: Gasoline, TankSize: 75.0, FuelConsumption: 9.0, NumberOfSeat: 8, HasAutoDoor: true
+Movable distance: 675.0 Km
+Cost for 100 Km: 1588.888888888889 Yen
+
+ModelName: Odyssey, Company: Honda, Owner: Kikuchi, EngineType: Diesel, TankSize: 56.0, FuelConsumption: 11.0, NumberOfSeat: 8, HasAutoDoor: false
+Movable distance: 616.0 Km
+Cost for 100 Km: 903.6363636363636 Yen
+
+ModelName: Presage, Company: Nissan, Owner: Shirotora, EngineType: Gasoline, TankSize: 60.0, FuelConsumption: 7.0, NumberOfSeat: 7, HasAutoDoor: false
+Movable distance: 420.0 Km
+Cost for 100 Km: 2042.857142857143 Yen
+
+ModelName: Tundra, Company: Toyota, Owner: Sugai, EngineType: Diesel, TankSize: 100.0, FuelConsumption: 6.76, NumberOfSeat: 5, HorsePower: 310
+Movable distance: 676.0 Km
+Cost for 100 Km: 1470.414201183432 Yen
+
+ModelName: Ridgeline, Company: Honda, Owner: Watanabe, EngineType: Diesel, TankSize: 83.279, FuelConsumption: 7.23, NumberOfSeat: 5, HorsePower: 250
+Movable distance: 602.10717 Km
+Cost for 100 Km: 1374.8271092669431 Yen
+
+
+After Aircondition is ON
+
+ModelName: Camley, Company: Toyota, Owner: Suzuki, EngineType: Gasoline, TankSize: 70.0, FuelConsumption: 13.635, NumberOfSeat: 5
+Movable distance: 954.4499999999999 Km
+Cost for 100 Km: 1048.7715438210487 Yen
+
+ModelName: Aqua, Company: Toyota, Owner: Nakajima, EngineType: Hybrid, TankSize: 36.0, FuelConsumption: 36.0, NumberOfSeat: 5
+Movable distance: 1296.0 Km
+Cost for 100 Km: 397.22222222222223 Yen
+
+ModelName: Sienna, Company: Toyota, Owner: Tanaka, EngineType: Gasoline, TankSize: 75.0, FuelConsumption: 7.2, NumberOfSeat: 8, HasAutoDoor: true
+Movable distance: 540.0 Km
+Cost for 100 Km: 1986.111111111111 Yen
+
+ModelName: Odyssey, Company: Honda, Owner: Kikuchi, EngineType: Diesel, TankSize: 56.0, FuelConsumption: 8.8, NumberOfSeat: 8, HasAutoDoor: false
+Movable distance: 492.80000000000007 Km
+Cost for 100 Km: 1129.5454545454545 Yen
+
+ModelName: Presage, Company: Nissan, Owner: Shirotora, EngineType: Gasoline, TankSize: 60.0, FuelConsumption: 5.6000000000000005, NumberOfSeat: 7, HasAutoDoor: false
+Movable distance: 336.00000000000006 Km
+Cost for 100 Km: 2553.5714285714284 Yen
+
+ModelName: Tundra, Company: Toyota, Owner: Sugai, EngineType: Diesel, TankSize: 100.0, FuelConsumption: 5.408, NumberOfSeat: 5, HorsePower: 310
+Movable distance: 540.8000000000001 Km
+Cost for 100 Km: 1838.01775147929 Yen
+
+ModelName: Ridgeline, Company: Honda, Owner: Watanabe, EngineType: Diesel, TankSize: 83.279, FuelConsumption: 5.784000000000001, NumberOfSeat: 5, HorsePower: 250
+Movable distance: 481.685736 Km
+Cost for 100 Km: 1718.5338865836789 Yen
+
