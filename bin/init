@@ -14,5 +14,9 @@ create_dir() {
 bindir=`dirname $0`
 root=`dirname $bindir`
 
-create_dir ex-review1
+if [ "$1" = "" ]; then
+  echo "usage: init ex**"
+  exit 1
+fi
+create_dir $1
 
