@@ -1,0 +1,153 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=euc-jp">
+  <title> Programming Java II </title>
+  <link href="../ex.css" rel="stylesheet" type="text/css">
+</head>
+<body bgcolor="#FFFFFF" link="#0000FF" vlink="#800080">
+<basefont size=3>
+
+<h1 align="center">Programming Java II<br>
+Exercise 2</h1> 
+
+<hr>
+<h2>Preparation</h2>
+&quot;cd&quot; to your work directory and copy the following files to your work directory.<PRE><font size=+2><KBD>/home/professor/aiguo/Java2/ExGUIAWT/*</KBD></FONT></PRE>
+
+<hr>
+<h2>Problem 1: A Simple Applet (50 out of 100)</h2>
+
+<TABLE BORDER WIDTH=100% BGCOLOR="#FFFFCC">
+<TR><TD>
+<H3>The details of <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/applet/Applet.html">Applet</a>,
+ <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/Graphics.html">Graphics</a>,
+  <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/Color.html">Color</a> and 
+  <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/Font.html">Font</a></H3>
+<p><b>View the answer of this problem by &quot;appletviewer ExGUIAWT_01_ans.html&quot;.</b></TABLE>
+
+<br>
+&nbsp;&nbsp;&nbsp; Create a simple window showing a message such as &quot;My name is xxxxx xxxx&quot;.<p>&nbsp;&nbsp;&nbsp; 
+Requirements:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_01 (file name: ExGUIAWT_01.java)</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: Applet</p>
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Import java.applet.Applet and other necessary classes at 
+the beginning of your file.</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Override the paint() method of Applet to draw a message 
+(a String object).</p>
+<hr>
+
+<h2>Problem 2:&nbsp; An Applet Handling Action Events (30 out of 100)</h2>
+
+<TABLE BORDER WIDTH=100% BGCOLOR="#FFFFCC">
+<TR><TD>
+<H3>The details of 
+<a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/Button.html">Button</a>, 
+<a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/event/ActionEvent.html">ActionEvent</a> and 
+  <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/event/ActionListener.html">ActionListener</a></H3>
+<p><b>View the answer of this problem by &quot;appletviewer ExGUIAWT_02_ans.html&quot;.</b></TABLE>
+
+<p>&nbsp;&nbsp;&nbsp; This is an extension of ExGUIAWT_01. Clicking one of the buttons on the 
+window can change the message's color.</p>
+<p>&nbsp;&nbsp;&nbsp; Requirements:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_02 (file name: ExGUIAWT_02.java)</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: ExGUIAWT_01 (If you have not finished 
+Problem 1, please use ExGUIAWT_01_ans instead of ExGUIAWT_01, as the super class)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - implement interface: ActionListener [This is to catch button-clicking 
+events (Action events). Since any object can be an action listener by implementing the ActionListener interface, 
+here we use ExGUIAWT_02 as a action listener.]</p>
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Declare attributes to save the three buttons and the 
+message color.</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Override Applet's init() method:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Place the buttons on the 
+Applet (use add());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Add action 
+listener to each button (use addActionListener(this)). That is, we use one listener to catch events from 3 buttons.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Override paint() method:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Call super class's paint() 
+method;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Set the message 
+color attribute to the Graphics object (use setColor());<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Draw a message 
+&quot;You have selected *** color!&quot;.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement the actionPerformed() method for ActionListener<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Get the <b>source object</b> 
+on which the event occurred (call getSource() of the argument).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) The source object should be 
+one of the three buttons saved in the attributes. Therefore, you can know which 
+button has been clicked by comparing the button attributes with the source 
+object.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Decide which color should 
+be used (save the color to the message color attribute).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4) Finally, call repaint() 
+method of itself.</p>
+<hr>
+<h2>Problem 3: An Applet Handling Mouse Events (20 out of 100)</h2>
+
+<TABLE BORDER WIDTH=100% BGCOLOR="#FFFFCC">
+<TR><TD>
+<H3>The details of 
+<a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/event/MouseListener.html">MouseListener</a>, 
+<a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/event/MouseMotionListener.html">MouseMotionListener</a> and 
+  <a href="http://java.sun.com/j2se/1.5.0/ja/docs/ja/api/java/awt/event/MouseEvent.html">MouseEvent.</a></H3>
+<p><b>View the answer of this problem by &quot;appletviewer ExGUIAWT_03_ans.html&quot;.</b></TABLE>
+
+<p>&nbsp;&nbsp;&nbsp; This is an extension of ExGUIAWT_02. By dragging the mouse on the 
+window, you can draw a line segment.</p>
+<p>&nbsp;&nbsp;&nbsp; Requirements:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_03 (file name: ExGUIAWT_03.java)</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: ExGUIAWT_02 (If you have not finished 
+Problem 2, please use ExGUIAWT_02_ans instead of ExGUIAWT_02, as the super class)</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - implement interface: MouseListener (to catch mouse button 
+on/off 
+events),&nbsp; MouseMotionListener (to catch mouse motion events). Since any object can be an 
+listener, 
+here we use ExGUIAWT_03 itself to make those listeners.]</p>
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Use attributes to 
+save mouse pointer positions (the two end points of the line segment).</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Use an attribute value (boolean type) to save dragging status 
+(true or false).</p>
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Override Applet's init() method:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Call the same 
+method of its supper class;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Add  
+listeners (this) to the ExGUIAWT_03 object itself (use addMouseListener() and 
+addMouseMotionListener()). That is, we use two listeners to catch events on 
+one object.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Override Applet's paint() method:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Call the paint() 
+method of super class;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) If the dragging 
+status attribute is &quot;true&quot;, draw a line segment based on the values 
+of the attributes;</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement methods mousePressed() and mouseReleased() for 
+MouseListener:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Change the dragging status 
+attribute.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) In mousePressed(), save 
+mouse position to the attribute as one end point of the line segment<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Call repaint() 
+method.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement method mouseDragged() for 
+MouseMotionListener:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Save mouse position to the 
+attribute as another end point of the line segment<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Call repaint() 
+method.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement the following methods but do nothing:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mouseClicked(),&nbsp; 
+mouseEntered(), mouseExited(), and mouseMoved().&nbsp;</p>
+
+<hr>
+
+<DIV class="footer">
+<P ALIGN="RIGHT">
+[ Last Updated: 2008/3/26 by Hirokuni Kurokawa (aiguo)] 
+</P>
+</div> 
+
+</body>
+</html>

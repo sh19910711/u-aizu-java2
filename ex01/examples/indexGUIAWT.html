@@ -1,0 +1,888 @@
+<!DOCTYPE html PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP">
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <title>Java Programming II 2013: Exercise 01 - Event and AWT</title>
+  <link href="../ex.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body bgcolor="#ffffff" link="#0000ff" vlink="#800080">
+
+
+
+
+
+
+
+
+<basefont size="3">
+<h1 style="font-weight: bold; text-align: center;"> Java Programming II
+2014: Exercise 01</h1>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+<big style="color: rgb(255, 0, 0);"><span style="font-weight: bold;"></span></big><big style="color: rgb(255, 0, 0); font-weight: bold;">Submission Guide:<br>
+
+
+
+
+
+
+- Due Date:&nbsp; Before
+the next week's exercise class (April 24, 2014).<br>
+
+
+
+
+
+
+- Create a directory ~/java2/</big><big style="color: rgb(255, 0, 0); font-weight: bold;">ex01</big><big style="color: rgb(255, 0, 0); font-weight: bold;">/ and give the "chmod 705
+~/java2/ex01/" command, and save your answers to the directory.</big><br style="font-weight: bold;">
+
+
+
+<br>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+<hr style="width: 100%; height: 2px;">In this exercise, you will
+exercise Java Events and Applets.
+<hr>
+<h2>Preparation</h2>
+
+
+
+
+
+
+
+
+"cd" to your work directory and copy the following files to your work
+directory.
+<pre><font size="+2"><kbd>/home/course/java2/code/ByTopics/ExGUIAWT/*</kbd></font></pre>
+
+
+
+
+
+
+
+
+<hr>
+<h2>[Step 1]&nbsp;A Simple Applet (40points)</h2>
+
+
+
+
+
+
+
+
+<table bgcolor="#ffffcc" border="1" width="100%">
+
+
+
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      
+      
+      
+      <h3>The details of <a href="http://docs.oracle.com/javase/7/docs/api/java/applet/Applet.html">Applet</a>,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Graphics.html">Graphics</a>,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Color.html">Color</a>
+and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Font.html">Font</a></h3>
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      <p><b>View the answer of this problem by "appletviewer
+ExGUIAWT_01_ans.html".</b></p>
+
+
+
+
+
+
+
+
+      </td>
+
+
+
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp; Create a simple window (width=400 and height= 300) showing a red circle (r=200) and words 
+"April 24, 2014".
+<p>&nbsp;&nbsp;&nbsp; Requirements:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_01 (file name:
+ExGUIAWT_01.java)</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: Applet</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Import java.applet.Applet and other
+necessary classes at the beginning of your file.</p>
+
+
+
+
+
+
+
+
+    <p>&nbsp;&nbsp;&nbsp; - Override super class&#39;s init() method to change window size.&nbsp;</p>
+
+
+
+
+
+
+
+
+    <p>&nbsp;&nbsp;&nbsp;&nbsp; - Override super class&#39;s paint() method to
+draw the circle and words.</p>
+
+
+
+
+
+
+
+
+<hr>
+<h2>[Step 2]&nbsp;&nbsp;An Applet Handling Action Events&nbsp;(30points)</h2>
+
+
+
+
+
+
+
+
+<table bgcolor="#ffffcc" border="1" width="100%">
+
+
+
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      
+      
+      
+      <h3>The details of <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/Button.html">Button</a>,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/ActionEvent.html">ActionEvent</a>
+and <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/ActionListener.html">ActionListener</a></h3>
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      <p><b>View the answer of this problem by "appletviewer
+ExGUIAWT_02_ans.html".</b></p>
+
+
+
+
+
+
+
+
+      </td>
+
+
+
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; This is an extension of ExGUIAWT_01. Clicking any button can change the number between the buttons.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; Requirements:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_02 (file name:
+ExGUIAWT_02.java)</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: ExGUIAWT_01 (If you have not
+finished Step 1, please use ExGUIAWT_01_ans instead of ExGUIAWT_01,
+as super class)</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - implement interface: ActionListener [This
+is to catch button-clicking events (Action events). Since any object
+can be an action listener by implementing the ActionListener interface,
+here we use ExGUIAWT_02 as a action listener.]</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Declare attributes to save the buttons (Button objects), the number and a label (Label object) for showing the number.<br />
+&nbsp;&nbsp;&nbsp; - The number and the label should be declared as protected attributes for subclasses.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Override Applet's init() method:<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) call super class&#39;s init() method.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Place
+the buttons and the label on the Applet (use add());<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Add
+action listener (this) to each button (use addActionListener(this)). That is,
+we use one listener to catch events from all the buttons.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement the actionPerformed() method
+for ActionListener<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Get the <b>source
+object</b> on which the event occurred (call getSource() of the
+argument).<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) The source object
+should be one of the buttons saved in the attributes. Therefore,
+you can know which button has been clicked by comparing the button
+attributes with the source object.<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Increase or decrease the number according to the clicked butten.<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (4) Set the number to the label (call Label setText() method).</p>
+
+
+
+
+
+
+
+
+<hr>
+<h2>[Step 3]&nbsp;An Applet Handling Mouse Events&nbsp;(30points)</h2>
+
+
+
+
+
+
+
+
+<table bgcolor="#ffffcc" border="1" width="100%">
+
+
+
+
+
+
+
+
+  <tbody>
+
+
+
+
+
+
+
+
+    <tr>
+
+
+
+
+
+
+
+
+      <td>
+      
+      
+      
+      
+      
+      
+      
+      
+      <h3>The details of <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/MouseListener.html">MouseListener</a>,
+      <a href="http://docs.oracle.com/javase/7/docs/api/java/awt/event/MouseMotionListener.html">MouseMotionListener</a>
+and <a href="http://docs.oracle.com/javase/7/docs/api/org/w3c/dom/events/MouseEvent.html">MouseEvent.</a></h3>
+
+
+
+
+
+
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      <p><b>View the answer of this problem by "appletviewer
+ExGUIAWT_03_ans.html".</b></p>
+
+
+
+
+
+
+
+
+      </td>
+
+
+
+
+
+
+
+
+    </tr>
+
+
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  
+  
+  
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; This is an extension of ExGUIAWT_02. By horizontally dragging
+the mouse on the window, you can chagne the number quickly.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; Requirements:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- class name: ExGUIAWT_03 (file name:
+ExGUIAWT_03.java)</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- super class: ExGUIAWT_02 (If you have not
+finished Step 2, please use ExGUIAWT_02_ans instead of ExGUIAWT_02,
+as the super class)</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800080">* If you use ExGUIAWT_02 _ans as the super class, use the information below for accessing its attributes:<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected Label l_num = new Label(&quot;0&quot;);<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; protected int number = 0;</font></p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - implement interface: MouseListener (to
+catch mouse button on/off events),&nbsp; MouseMotionListener (to catch
+mouse motion events). Since any object can be an listener, here we use
+ExGUIAWT_03 itself to make those listeners.]</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; Comments:</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Use an attribute to save mouse x position.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp; &nbsp;- Override Applet's init() method:<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Call
+the same method of its supper class;<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Add
+listeners (this) to the ExGUIAWT_03 object itself (use
+addMouseListener() and addMouseMotionListener()). That is, we use two
+listeners to catch events on one object.</p>
+
+
+
+
+
+
+
+
+<p>&nbsp;&nbsp;&nbsp;&nbsp; - Implement methods mousePressed() for MouseListener:<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Get mouse x position (call getX() of the argument), save it to the attribute.<br>
+
+
+
+
+
+
+
+
+    &nbsp;&nbsp;&nbsp; - Implement method mouseDragged() for
+MouseMotionListener:<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (1) Get mouse x position; Compare it with the attribute (the saved position) to decide how to change the number in super class.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (2) Set the number to the label in the super class.<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (3) Save current mouse
+position to the attribute for further use.<br>
+
+
+
+
+
+
+
+
+    &nbsp;&nbsp;&nbsp; - Implement the following methods but do
+nothing:<br>
+
+
+
+
+
+
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mouseClicked(),&nbsp;
+mouseEntered(), mouseExited(), mouseReleased(), and mouseMoved().&nbsp;</p>
+
+
+
+
+
+
+
+
+<hr>
+<div class="footer">
+<p align="right"> </p>
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+</body>
+</html>
