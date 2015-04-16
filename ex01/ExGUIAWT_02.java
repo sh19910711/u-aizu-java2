@@ -52,7 +52,7 @@ public class ExGUIAWT_02 extends ExGUIAWT_01 implements ActionListener {
 
   // (2)
   protected void updateCounter() {
-    counter.setText(String.format("count = %d", count));
+    counter.setText(String.format("%d", count));
   }
 
   // (3)
