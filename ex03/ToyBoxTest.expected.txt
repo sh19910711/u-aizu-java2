@@ -1,0 +1,9 @@
+Yaris/1500
+Corolla/2500
+Bear1/1000
+Bear2/2000
+Tacoma/3300
+Bear3/1200
+After assigning the carBox into the "sometoyBox"...
+Yaris/1500
+Corolla/2500
