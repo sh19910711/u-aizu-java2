@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 
 /*
-<applet code = "ExGenerics_01" width=400 height=400></applet>
+<applet code = "ExGenerics_01" archive="build/ex03.jar" width=400 height=400></applet>
 */
 
 public class ExGenerics_01 extends Applet{
@@ -28,4 +28,5 @@ public class ExGenerics_01 extends Applet{
 			g.drawString(s, 100, ii*20);
 		}
 	}
+
 }
