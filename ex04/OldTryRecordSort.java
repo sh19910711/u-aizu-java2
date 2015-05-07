@@ -3,7 +3,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class TryRecordSort {
+public class OldTryRecordSort {
   public static void main(String[] args) {
     ArrayList<SortableRecord> list = new ArrayList<SortableRecord>();
     list.add(new SortableRecord("s5000001", 90, 85, 60));
@@ -23,6 +23,5 @@ public class TryRecordSort {
       System.out.println(r.toString());
     }
 
-    Arrays.sort(list);
   }
 }
