@@ -1,0 +1,6 @@
+// What is the reason of this running exception ?
+// Write down your opinion to a file "ExGenerics_01.txt".
+
+Point class cannot cast to String class,
+because they are unrelated class.
+
