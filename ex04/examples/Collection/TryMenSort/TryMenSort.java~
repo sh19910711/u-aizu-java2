@@ -1,0 +1,23 @@
+import java.util.Arrays;
+public class TryVehicleSort {
+  public static void main(String[] args) {
+    SortableVehicle[] vhcs = {
+      new SortableVehicle("Windom Toyota","Toyota","Corolla","1234A"),
+      new SortableVehicle("Sunsuke Honda","Honda","Stream","14321B"),
+      new SortableVehicle("Yusuke Toyota","Toyota","Avalon","1212A"),
+      new SortableVehicle("Yuu Toyota","Toyota","Camry","3210B"),
+      new SortableVehicle("Daisuke Honda","Honda","Accord","1111A"),
+      new SortableVehicle("Windom Toyota","Toyota","Lexus","1112A"),
+    };
+
+    
+    System.out.println("Original Order: ");
+    for (SortableVehicle v : vhcs) System.out.println(v);
+
+    Arrays.sort(vhcs);
+
+    System.out.println("\nOrder after sorting using Comparable method: ");
+    for (SortableVehicle v : vhcs) System.out.println(v);
+ }
+
+}
