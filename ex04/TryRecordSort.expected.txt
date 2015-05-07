@@ -1,0 +1,17 @@
+Original Order: 
+ID: s5000001, total: 235, math: 90, Japanese: 85, English: 60
+ID: s5000002, total: 210, math: 50, Japanese: 75, English: 85
+ID: s5000003, total: 225, math: 85, Japanese: 65, English: 75
+ID: s5000004, total: 245, math: 75, Japanese: 80, English: 90
+ID: s5000005, total: 224, math: 60, Japanese: 64, English: 100
+ID: s5000006, total: 235, math: 80, Japanese: 75, English: 80
+ID: s5000007, total: 232, math: 95, Japanese: 67, English: 70
+
+Order after sorting using Comparable method: 
+ID: s5000004, total: 245, math: 75, Japanese: 80, English: 90
+ID: s5000001, total: 235, math: 90, Japanese: 85, English: 60
+ID: s5000006, total: 235, math: 80, Japanese: 75, English: 80
+ID: s5000007, total: 232, math: 95, Japanese: 67, English: 70
+ID: s5000003, total: 225, math: 85, Japanese: 65, English: 75
+ID: s5000005, total: 224, math: 60, Japanese: 64, English: 100
+ID: s5000002, total: 210, math: 50, Japanese: 75, English: 85
