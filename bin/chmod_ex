@@ -1,0 +1,6 @@
+#!/bin/sh
+
+bindir=`dirname $0`
+root=`dirname $bindir`
+chmod -R g-rwx $root/ex*
+
