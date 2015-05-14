@@ -7,3 +7,5 @@ project(ex-review2)
 file(GLOB sources *.java)
 add_jar(ex-review2 ${sources})
 
+add_jar(testjar packagetest/UsageDemoPackage.java)
+
