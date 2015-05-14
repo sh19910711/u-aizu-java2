@@ -1,0 +1,10 @@
+Name= Yaris, price= 1500
+Name= Corolla, price= 2500
+Name= Bear1, price= 1000
+Name= Bear2, price= 2000
+Name= Tacoma, price= 3300
+Name= Bear3, price= 1200
+After assigning the carBox into the "sometoyBox"...
+Name= Yaris, price= 1500
+Name= Corolla, price= 2500
+Name= Prius, price= 4300
