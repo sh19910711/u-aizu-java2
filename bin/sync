@@ -5,7 +5,8 @@ root=`dirname $bindir`
 
 pushd $root
 
-tar zvcf - ./ex*/*.java | ssh aizu-std1 /usr/local/gnu/bin/tar zxvf - -C java2/
+# tar zvcf - ./ex*/*.java | ssh aizu-std1 /usr/local/gnu/bin/tar zxvf - -C java2/
+tar zvcf - `git ls-files` | ssh aizu-std1 /usr/local/gnu/bin/tar zxvf - -C java2/
 
 popd
 
