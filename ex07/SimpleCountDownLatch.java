@@ -26,6 +26,7 @@ public class SimpleCountDownLatch {
   }
 
   synchronized public void await() throws InterruptedException {
+    System.out.println("Latch: before wait");
     while ( tasks > 0 ) {
       try {
         wait();
@@ -34,5 +35,6 @@ public class SimpleCountDownLatch {
         System.exit(0);
       }
     }
+    System.out.println("Latch: after wait");
   }
 }
