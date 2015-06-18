@@ -12,7 +12,7 @@ public class ProducerConsumerTest {
         // c1.start();
         // p2.start();
         // c2.start();
-        int size = 4;
+        int size = 10;
         CircularQueue c = new CircularQueue(4);
         Producer[] producers = new Producer[size];
         Consumer[] consumers = new Consumer[size];
