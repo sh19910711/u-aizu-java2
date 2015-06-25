@@ -21,8 +21,8 @@ public class FReaderServer {
 
         // Input Requested Filename
         InputStream is = socket.getInputStream();
-        DataInputStream dis = new DataInputStream(is);
-        String req = dis.readLine();
+        BufferedReader bris = new BufferedReader(new InputStreamReader(is));
+        String req = bris.readLine();
 
         // Output Requested File
         OutputStream os = socket.getOutputStream();
