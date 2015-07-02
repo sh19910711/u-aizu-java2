@@ -13,8 +13,11 @@ public class FReaderClient {
       out.writeUTF(filename + "\n");
 
       InputStream is = socket.getInputStream();
-      DataInputStream dis = new DataInputStream(is);
-      System.out.println(dis.readUTF());
+      BufferedReader buf = new BufferedReader(new InputStreamReader(is, "UTF-8"));
+      String line;
+      while((line = buf.readLine()) != null) {
+        System.out.println(line);
+      }
 
       socket.close();
     } catch(Exception e) {
