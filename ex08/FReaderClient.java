@@ -5,16 +5,16 @@ import java.util.*;
 public class FReaderClient {
   final int PORT = 8080;
 
-  FReaderClient(String filename) {
+  FReaderClient(final String filename) {
     try {
       Socket socket = new Socket("localhost", PORT);
       OutputStream os = socket.getOutputStream();
-      DataOutputStream dos = new DataOutputStream(os);
-      dos.writeChars(filename + "\n");
+      DataOutputStream out = new DataOutputStream(os);
+      out.writeUTF(filename + "\n");
 
       InputStream is = socket.getInputStream();
       DataInputStream dis = new DataInputStream(is);
-      System.out.println(dis.readLine());
+      System.out.println(dis.readUTF());
 
       socket.close();
     } catch(Exception e) {

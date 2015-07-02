@@ -21,8 +21,8 @@ public class FReaderServer {
 
         // Input Requested Filename
         InputStream is = socket.getInputStream();
-        BufferedReader bris = new BufferedReader(new InputStreamReader(is));
-        String req = bris.readLine();
+        DataInputStream in = new DataInputStream(is);
+        String req = in.readUTF().trim();
 
         // Output Requested File
         OutputStream os = socket.getOutputStream();
@@ -31,6 +31,24 @@ public class FReaderServer {
         System.out.println("req: " + req);
         System.out.println("req = '" + req + "' (" + files.contains(req) + ")");
         System.out.println("req = 'Hello.java' (" + files.contains("Hello.java") + ")");
+        String foo = "Hello.java";
+        System.out.println("req = '" + req + "' (" + files.contains(foo) + ")");
+
+        for ( Byte c : req.getBytes()) {
+          System.out.print(c);
+        }
+        System.out.println();
+
+        for ( Byte c : "Hello.java".getBytes()) {
+          System.out.print(c);
+        }
+        System.out.println();
+
+        for ( Byte c : foo.getBytes()) {
+          System.out.print(c);
+        }
+        System.out.println();
+
         if (files.contains(req)) {
           DataInputStream fileInput = new DataInputStream(new FileInputStream(req));
           String line;
