@@ -17,6 +17,6 @@ public class ServerEnvClient {
     }
 
     System.out.println(
-        String.format("Server Env: %s is %s\n", remoteHost, remoteOS));
+        String.format("Server Env: OS of %s is %s\n", remoteHost, remoteOS));
   }
 }
