@@ -5,5 +5,6 @@ include(UseJava)
 
 project(ex09)
 file(GLOB sources *.java)
+message(${sources})
 add_jar(ex09 ${sources})
 

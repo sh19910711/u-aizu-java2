@@ -15,15 +15,12 @@ implements Hello {
   }
 
   public static void main(String args[]) { 
-    System.out.println("HelloImpl: main");
-
     // Create and install a security manager 
     if (System.getSecurityManager() == null) { 
       System.setSecurityManager(new RMISecurityManager()); 
     } 
     try { 
       HelloImpl obj = new HelloImpl(); 
-      System.out.println("Test");
       // Bind this object instance to the name "HelloServer" 
       // RMI uses 1099 as a default port
       //          Naming.rebind("//lecsv3:1234/HelloServer", obj); 
