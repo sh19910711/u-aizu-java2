@@ -3,16 +3,19 @@ import java.net.*;
 import java.util.*;
 
 public class FReaderClient {
-  final int PORT = 8080;
-
   FReaderClient(final String filename) {
     try {
-      Socket socket = new Socket("localhost", PORT);
+      Socket socket = new Socket(Common.HOST, Common.PORT);
       OutputStream os = socket.getOutputStream();
       DataOutputStream out = new DataOutputStream(os);
-      out.writeUTF(filename + "\n");
+      out.writeUTF(filename);
+      out.flush();
 
       InputStream is = socket.getInputStream();
+      DataInputStream in = new DataInputStream(is);
+      int length = in.readInt();
+      System.out.println("File Size = " + length);
+
       BufferedReader buf = new BufferedReader(new InputStreamReader(is, "UTF-8"));
       String line;
       while((line = buf.readLine()) != null) {

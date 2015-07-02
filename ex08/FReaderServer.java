@@ -3,10 +3,13 @@ import java.net.*;
 import java.util.*;
 
 public class FReaderServer {
-  final int PORT = 8080;
-
   FReaderServer() {
-    String[] filenames = {"Hello.java"};
+    // providing contents
+    String[] filenames = {
+      "Hello.java",
+      "Common.java",
+    };
+
     Set<String> files = new HashSet<String>();
     for (String filename : filenames) {
       files.add(filename);
@@ -15,7 +18,7 @@ public class FReaderServer {
     }
 
     try {
-      ServerSocket serverSocket = new ServerSocket(PORT);
+      ServerSocket serverSocket = new ServerSocket(Common.PORT);
       while (true) {
         Socket socket = serverSocket.accept();
 
@@ -26,17 +29,24 @@ public class FReaderServer {
 
         // Output Requested File
         OutputStream os = socket.getOutputStream();
-        DataOutputStream dos = new DataOutputStream(os);
+        DataOutputStream out = new DataOutputStream(os);
+        out.flush();
 
         if (files.contains(req)) {
-          BufferedReader bufReader = new BufferedReader(
-              new InputStreamReader(new FileInputStream(req), "UTF-8"));
-          String line;
-          while ((line = bufReader.readLine()) != null) {
-            dos.writeUTF(line);
+          // send file size
+          File file = new File(req);
+          int len = (int)file.length();
+          out.writeInt(len);
+
+          // send file content
+          FileInputStream fis = new FileInputStream(req);
+          byte[] bytes = new byte[len];
+          int cnt;
+          while ((cnt = fis.read(bytes)) > 0) {
+            out.write(bytes, 0, cnt);
           }
         } else {
-          dos.writeChars("not found\n");
+          out.writeChars("not found\n");
         }
 
         socket.close();
