@@ -1,5 +1,6 @@
-class Hello {
-  public static void main(String[] args) {
-    System.out.println("Hello!!");
-  }
+import java.rmi.Remote; 
+import java.rmi.RemoteException; 
+
+public interface Hello extends Remote { 
+    String sayHello() throws RemoteException; 
 }
