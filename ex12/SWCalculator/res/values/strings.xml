@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="label_description">BMIを計算します</string>
+    <string name="label_height">身長(cm)</string>
+    <string name="label_weight">体重(kg)</string>
+    <string name="button_calculate">計算</string>
+    <string name="button_close_dialog">閉じる</string>
+    <string name="label_bmi_description">あなたのBMIは</string>
+</resources>
