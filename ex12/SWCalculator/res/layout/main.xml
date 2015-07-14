@@ -19,23 +19,25 @@
         android:layout_height="wrap_content"
         android:numeric="integer"
         android:maxLength="3"
-        android:text="160"
+        android:text="170"
         />
 	<TextView  
 	    android:layout_width="fill_parent" 
 	    android:layout_height="wrap_content" 
-	    android:text="@string/label_weight"
+	    android:text="@string/label_gender"
 	    />
-    <EditText android:id="@+id/text_weight"
+    <EditText android:id="@+id/text_gender"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:numeric="integer"
         android:maxLength="3"
-        android:text="50"
+        android:text="M"
         />
+
     <Button
         android:id="@+id/button_calculate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_calculate" />
+
 </LinearLayout>

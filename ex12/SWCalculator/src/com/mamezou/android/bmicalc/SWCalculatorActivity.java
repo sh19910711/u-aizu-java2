@@ -11,6 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class SWCalculatorActivity extends Activity {
+  private int getStandardWeight(int height, String gender) {
+    if (gender.equals("M")) {
+      return height * height * 22 / 10000;
+    } else {
+      return height * height * 21 / 10000;
+    }
+  }
+
   @Override
   public void onCreate(Bundle icicle) {
     super.onCreate(icicle);
@@ -27,11 +35,11 @@ public class SWCalculatorActivity extends Activity {
     button.setOnClickListener(new View.OnClickListener() {
       public void onClick(View view) {
         EditText textHeight = (EditText) findViewById(R.id.text_height);
-        EditText textWeight = (EditText) findViewById(R.id.text_weight);
+        EditText textGender = (EditText) findViewById(R.id.text_gender);
         int height = Integer.parseInt(textHeight.getText().toString());
-        int weight = Integer.parseInt(textWeight.getText().toString());
-        int bmi = 10000 * weight / height / height;
-        builder.setMessage(String.valueOf(bmi));
+        String gender = textGender.getText().toString();
+        int sw = getStandardWeight(height, gender);
+        builder.setMessage(String.valueOf(sw));
         builder.create();
         builder.show();
       }
