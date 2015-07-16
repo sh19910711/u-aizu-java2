@@ -6,7 +6,7 @@
     <string name="label_weight">Gender(M/F)</string>
     <string name="button_calculate">計算</string>
     <string name="button_close_dialog">閉じる</string>
-    <string name="label_bmi_description">あなたのBMIは</string>
+    <string name="label_sw_description">あなたのSWは</string>
     <string name="button_show_next_activity">結果を次画面に表示</string>
     <string name="label_too_slim">痩せ気味です</string>
     <string name="label_standard">標準体型です</string>

@@ -34,7 +34,7 @@ public class SWCalculator3Activity extends Activity {
 		labelPreviousWeight = (TextView) findViewById(R.id.label_previous_weight);
 
 		final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle(R.string.label_bmi_description);
+		builder.setTitle(R.string.label_sw_description);
 		builder.setPositiveButton(R.string.button_close_dialog, new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				setResult(RESULT_OK);
