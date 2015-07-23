@@ -23,13 +23,12 @@ public class CarClientSimulator extends JFrame
     create_button = new JButton("Create");
     create_button.setSize(180, 24);
     create_button.setLocation(1, 1+24*2);
-    create_button.addActionListener(
-        new ActionListener() {
-          public void actionPerformed(ActionEvent e) {
-            System.out.println("create_button: clicked");
-          }
-        }
-        );
+    create_button.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("create_button: clicked");
+        new Thread(new CarClientThread(name_field.getText()));
+      }
+    });
 
     setLayout(null);
     add(client_title);
@@ -43,7 +42,9 @@ public class CarClientSimulator extends JFrame
       CarClientThread cct = new CarClientThread(thread_title);
 
       cct.addWindowListener(new WindowAdapter() {
-        public void windowClosing(WindowEvent e) {System.exit(0);}
+        public void windowClosing(WindowEvent e) {
+          System.exit(0);
+        }
       });
 
       cct.setTitle("Car Client Thread");
@@ -84,6 +85,9 @@ class CarClientThread extends JFrame implements Runnable {
         JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
     // TODO
+    setTitle("Car Client Thread");
+    setSize(640, 480);
+    setVisible(true);
 
   } // CarClientThread  constructor
 
