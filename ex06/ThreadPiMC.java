@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class ThreadPiMC implements Runnable {
 
@@ -6,9 +7,9 @@ public class ThreadPiMC implements Runnable {
 
   // disk radius
   private static final double r = 1.0;
-  private static double totalSum = 0.0;
   private static int totalNumSamples = 0;
 
+  public double sum = 0.0;
   private int numSamples = 0;
 
   public ThreadPiMC(int numSamples) {
@@ -16,27 +17,25 @@ public class ThreadPiMC implements Runnable {
   }
 
   public double doMonteCarlo(int numSamples) {
-    double sum = 0.0;
+    double count = 0.0;
     // Pseudo random number generator
-    Random rng = new Random();
+    // Random rng = new Random();
 
     for (int i = 0; i < numSamples; ++i) {
       // Generate random samples from uniform distribution [-1,1]
-      double xs = -1.0 + 2.0*rng.nextDouble();
-      double ys = -1.0 + 2.0*rng.nextDouble();
+      double xs = -1.0 + 2.0*ThreadLocalRandom.current().nextDouble();
+      double ys = -1.0 + 2.0*ThreadLocalRandom.current().nextDouble();
 
       if ( (xs*xs+ys*ys) <= (r*r) ) {
-        sum = sum + 1.0;
+        count = count + 1.0;
       }
     }
 
-    // return (4.0 / num_samples * sum);
-    return sum;
+    return count;
   }
 
   public void run() {
-    double sum = doMonteCarlo(numSamples);
-    totalSum += sum;
+    sum = doMonteCarlo(numSamples);
   }
 
   public static void main(String[] args) {
@@ -49,7 +48,7 @@ public class ThreadPiMC implements Runnable {
     int numThreadSamples = totalNumSamples / NUM_THREAD;
 
     // Prepare threads
-    Runnable[] runnables = new Runnable[NUM_THREAD];
+    ThreadPiMC[] runnables = new ThreadPiMC[NUM_THREAD];
     for ( int i = 0; i < NUM_THREAD; ++ i ) {
       if ( i + 1 < NUM_THREAD ) {
         runnables[i] = new ThreadPiMC(numThreadSamples);
@@ -79,6 +78,10 @@ public class ThreadPiMC implements Runnable {
     }
 
     // Merge result: Calculate PI
+    double totalSum = 0.0;
+    for ( int i = 0; i < NUM_THREAD; ++ i ) {
+      totalSum += runnables[i].sum;
+    }
     double piTilde = 4.0 / totalNumSamples * totalSum;
     System.out.println("Pi ~ " + piTilde);
   }

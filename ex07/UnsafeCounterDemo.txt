@@ -1,0 +1,12 @@
+The result will be incorrect because a value incremented by a thread could be ignored by another thread,
+and the count could be used a previous count value, possibly.
+
+Let think "cnt ++" if cnt = 123, and Thread 1 and 2 starts simultaneously.
+And then the following situation might be happened:
+
+Thread 1: cnt = (123 + 1)
+=> cnt = 124
+
+Thread 2: cnt = (123 + 1) or (124 + 1)
+=> cnt = 124 or 125
+
