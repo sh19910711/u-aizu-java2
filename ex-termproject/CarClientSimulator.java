@@ -23,12 +23,7 @@ public class CarClientSimulator extends JFrame
     create_button = new JButton("Create");
     create_button.setSize(180, 24);
     create_button.setLocation(1, 1+24*2);
-    create_button.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent e) {
-        System.out.println("create_button: clicked");
-        new Thread(new CarClientThread(name_field.getText()));
-      }
-    });
+    create_button.addActionListener(new ButtonListener());
 
     setLayout(null);
     add(client_title);
@@ -74,6 +69,8 @@ class CarClientThread extends JFrame implements Runnable {
   // TODO
   JButton startbutton;
   JTextArea contentsarea;
+  JTextField numberOfRiders;
+  Thread thread;
 
   public CarClientThread(String cname) {
     startbutton = new JButton("Create Thread&Start");
@@ -85,6 +82,33 @@ class CarClientThread extends JFrame implements Runnable {
         JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 
     // TODO
+    setLayout(null);
+
+    numberOfRiders = new JTextField();
+    numberOfRiders.setSize(200, 40);
+    numberOfRiders.setLocation(1 + 200, 1);
+
+    startbutton.setSize(200, 40);
+    startbutton.setLocation(1 + 200, 1 + 100);
+
+    thread = new Thread(this);
+    startbutton.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        System.out.println("CarClientThread: start thread");
+        et = EngineType.DIESEL_ENGINE;
+        request_number = Integer.parseInt(numberOfRiders.getText());
+        thread.start();
+      }
+    });
+
+    contentsarea.setSize(600, 200);
+    contentsarea.setLocation(1, 1 + 200);
+
+    add(numberOfRiders);
+    add(startbutton);
+    add(contentsarea);
+    add(scrollPane);
+
     setTitle("Car Client Thread");
     setSize(640, 480);
     setVisible(true);
@@ -93,10 +117,12 @@ class CarClientThread extends JFrame implements Runnable {
 
   public void run() {
     // TODO: ............................
+    System.out.println("CarClientThread#run");
     Random r = new Random((System.currentTimeMillis()));
     for(;;) {
       try {
         Thread.sleep( (int) (r.nextDouble() * 1000) );
+        System.out.println("before request: " + request_number);
         Car cobj = crsvr.request(et,request_number);
         if(cobj == null) { 
           System.out.println("Error in finding suitable car");

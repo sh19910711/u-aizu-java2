@@ -7,6 +7,10 @@ public class Vehicle {
   public Vehicle() {}
 
   public Vehicle(String lpn, String make, String mn, String on) {
+    this.licensePlateNumber = lpn;
+    this.make = make;
+    this.modelName = mn;
+    this.ownerName = on;
   }
 
   public String getLicensePlateNumber() {

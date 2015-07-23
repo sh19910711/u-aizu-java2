@@ -2,11 +2,12 @@ public class MotorVehicle extends Vehicle {
   public EngineType engineType;
   private int horsePower;
 
-  public MotorVehicle() {
-  }
+  public MotorVehicle() {}
 
   public MotorVehicle(int hp, String lpn, String make, String mn, String on, EngineType et) {
     this.engineType = et;
+    this.horsePower = hp;
+    // super(lpn, make, mn, on);
   } 
 
   public int getHorsePower() {
@@ -14,7 +15,7 @@ public class MotorVehicle extends Vehicle {
   }
 
   public EngineType getEngineType() {
-    return null; // TODO
+    return engineType;
   }
 
   public String toString() {
