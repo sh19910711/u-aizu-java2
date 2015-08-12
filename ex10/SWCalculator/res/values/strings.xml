@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Standard Weight (SW) Calculator</string>
+    <string name="label_description">SWを計算します</string>
+    <string name="label_height">身長(cm)</string>
+    <string name="label_gender">性別（M/F）</string>
+    <string name="button_calculate">計算</string>
+    <string name="button_close_dialog">閉じる</string>
+    <string name="label_bmi_description">あなたのSWは</string>
+</resources>
