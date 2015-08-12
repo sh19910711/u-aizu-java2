@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Standard Weight (SW) Calculator</string>
+    <string name="label_description">SWを計算します</string>
+    <string name="label_height">身長(cm)</string>
+    <string name="label_weight">Gender(M/F)</string>
+    <string name="button_calculate">計算</string>
+    <string name="button_close_dialog">閉じる</string>
+    <string name="label_sw_description">あなたのSWは</string>
+    <string name="button_show_next_activity">結果を次画面に表示</string>
+    <string name="label_too_slim">痩せ気味です</string>
+    <string name="label_standard">標準体型です</string>
+    <string name="label_too_fat">太り気味です</string>
+
+    <string name="label_previous_time">・・・前回：</string>
+    <string name="button_save_result">入力値を記録して戻る</string>
+    <string name="button_close_current_activity">入力値を記録せずに戻る</string>
+</resources>
