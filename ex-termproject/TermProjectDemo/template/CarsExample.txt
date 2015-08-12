@@ -1,0 +1,6 @@
+      new Car(250, 5, "1234A", "Toyota","Corolla","Windom Toyota", EngineType.GAS_ENGINE)
+      new Car(150, 9, "1432B", "Honda","Stream", "Sunsuke Honda", EngineType.DIESEL_ENGINE)
+      new Car(170, 4, "1212A", "Toyota","Avalon","Yusuke Toyota", EngineType.GAS_ENGINE)
+      new Car(200, 6, "3210B", "Toyota","Camry", "Yuu Toyota", EngineType.GAS_ENGINE)
+      new Car(190, 7, "1111A", "Honda","Accord", "Daisuke Honda", EngineType.DIESEL_ENGINE)
+      new Car(200, 5, "1111B", "Honda","Inspire", "Yuuich Honda", EngineType.GAS_ENGINE)
